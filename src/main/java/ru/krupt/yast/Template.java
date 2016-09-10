@@ -18,7 +18,9 @@ public class Template {
     private final Iterable<Part> parts;
 
     public Template(String template) throws InvalidParameterFormat {
-        Objects.requireNonNull(template, "Template can't be null");
+        if (template == null) {
+            throw new NullPointerException("Template can't be null");
+        }
         parts = parseTemplate(template);
     }
 
