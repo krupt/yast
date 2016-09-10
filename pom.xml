@@ -7,8 +7,28 @@
     <groupId>ru.krupt</groupId>
     <artifactId>yast</artifactId>
     <version>1.0-rc1</version>
+    <packaging>jar</packaging>
 
     <description>Yet Another String Template</description>
+    <url>https://github.com/krupt/yast</url>
+
+    <developers>
+        <developer>
+            <name>Andrey Kovalev</name>
+            <email>krupt25@gmail.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT Licence</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/krupt/yast.git</url>
+    </scm>
 
     <dependencies>
         <dependency>
