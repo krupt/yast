@@ -6,7 +6,7 @@
 
     <groupId>ru.krupt</groupId>
     <artifactId>yast</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-rc1</version>
 
     <description>Yet Another String Template</description>
 
