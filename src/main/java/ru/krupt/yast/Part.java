@@ -2,8 +2,6 @@ package ru.krupt.yast;
 
 import lombok.Value;
 
-import java.util.OptionalInt;
-
 @Value
 class Part {
 
@@ -13,11 +11,13 @@ class Part {
 
     String beforeParameterValue;
 
-    OptionalInt parameterNo;
+    boolean parameterPresent;
+
+    int parameterNo;
 
     String afterParameterValue;
 
-    boolean defaultValueExists;
+    boolean defaultValuePresent;
 
     String defaultValue;
 
@@ -28,10 +28,15 @@ class Part {
     public Part(String text, String beforeParameterValue, int parameterNo, String afterParameterValue, boolean defaultValueExists, String defaultValue) {
         this.text = text;
         this.beforeParameterValue = beforeParameterValue;
-        this.parameterNo = parameterNo == EMPTY_PARAMETER_VALUE ? OptionalInt.empty() : OptionalInt.of(parameterNo);
+        this.parameterPresent = parameterNo != EMPTY_PARAMETER_VALUE;
+        this.parameterNo = parameterNo - 1;
         this.afterParameterValue = afterParameterValue;
-        this.defaultValueExists = defaultValueExists;
+        this.defaultValuePresent = defaultValueExists;
         this.defaultValue = defaultValue;
+    }
+
+    public int getParameterNoInTemplate() {
+        return parameterNo + 1;
     }
 
 }
